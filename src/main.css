@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+
+* {
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html {
+    font-size: 24px;
+    /* background-image: url("./images/usabackground.png"); */
+    background-color: #b6b6b6;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+body {
+    color: #2e2e2e;
+    width: 80%;
+    margin: auto;
+    padding: 1.5rem;
+    font-family: "SN Pro", sans-serif;
+    background-color: rgb(218, 218, 218);
+    border: 0.9rem solid #e4e4e4;
+    border-top: 0rem;
+    border-bottom: 0rem;
+    min-height: calc(100vh - 3em);
+}
+
+p {
+    margin: 0;
+}
+
+h1, h2{
+    margin: 0.3rem 0;
+}

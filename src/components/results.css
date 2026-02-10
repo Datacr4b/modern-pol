@@ -1,0 +1,73 @@
+.title-container {
+    text-align: center;
+    font-size: 1.75rem;
+}
+
+.axis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.bar {
+    height: 36pt;
+    line-height: 36pt;
+    padding: 8pt;
+    margin-top: 4pt;
+    margin-bottom: 4pt;
+    border-width: 4px;
+    border-right-width: 4px;
+    border-right-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-color: #222222;
+    background-color: #eeeeee;
+    display: block;
+    background-color: brown;
+}
+
+.text-wrapper {
+    font-size: 1.5rem;
+    display: inline-block;
+}
+
+.communism {
+    text-align: left;
+    background-color: #B53F47;
+}
+
+.freemarket {
+    text-align: right;
+    background-color: #79B53F;
+}
+
+.liberty {
+    text-align: left;
+    background-color: #B5A33F;
+}
+
+.order {
+    text-align: right;
+    background-color: #3F51B5;
+}
+
+.globalism {
+    text-align: left;
+    background-color: #B53F83;
+}
+
+.nationalism {
+    text-align: right;
+    background-color: #3FB5AD;
+}
+
+.conservative {
+    text-align: left;
+    background-color: #B57C3F;
+}
+
+.progressive {
+    text-align: right;
+    background-color: #3FB540;
+}

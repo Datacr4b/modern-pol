@@ -1,0 +1,85 @@
+.title-container {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.question-number {
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.question-container {
+    background-color: rgb(233, 233, 233);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin: auto;
+    font-size: 2rem;
+    width: 70%;
+    min-height: 150pt;
+    text-align: center;
+    margin-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.answers-container {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.answers-container > button {
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.25rem;
+    border: none;
+    border-radius: 1rem;
+    margin: auto;
+    display: block;
+    width: 50%;
+    min-width: 500pt;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.strongly-agree {
+    background-color: #1b5e20;
+}
+
+.strongly-agree:hover {
+    background-color: #154a19;
+}
+
+.agree {
+    background-color: #4caf50;
+}
+
+.agree:hover {
+    background-color: #29942e;
+}
+
+.neutral {
+    background-color: #949494;
+}
+
+.neutral:hover {
+    background-color: #656565;
+}
+
+.disagree {
+    background-color: #f44336;
+}
+
+.disagree:hover {
+    background-color: #d6271a;
+}
+
+.strongly-disagree {
+    background-color: #b71c1c;
+}
+
+.strongly-disagree:hover {
+    background-color: #a00e0e;
+}

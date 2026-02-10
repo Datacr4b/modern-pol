@@ -1,0 +1,23 @@
+header {
+    width: 100%;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(233, 233, 233);
+    border-radius: 0.5rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+#logo {
+    margin: 1rem 0 1rem 0;
+}
+
+#title {
+    font-size: 4.5rem;
+    color: #2e2e2e;
+    margin: 1.25rem 0 1rem 0;
+    font-style: bold;
+}

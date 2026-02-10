@@ -1,0 +1,90 @@
+.main-container {
+    display: block;
+    width: 50%;
+    min-width: 488pt;
+    margin: auto;
+    text-align: center;
+    padding: 0.25rem;
+    background-color: rgb(233, 233, 233);
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.main-container > div {
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    font-size: 1.3rem;
+    text-align: center;
+    width: 23.75%;
+}
+
+.ideology-image {
+    width: 23.75%;
+}
+
+.test-button {
+    background-color: rgb(45, 159, 252);
+    color: white;
+    font-size: 2.5rem;
+    padding: 0.25rem;
+    border-radius: 1rem;
+    margin: auto;
+    display: block;
+    width: 50%;
+    min-width: 500pt;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.test-button:hover {
+    background-color: rgb(37, 128, 202);
+}
+
+.axis-container-bg {
+    background-color: rgb(233, 233, 233);
+    border-radius: 1rem;
+    padding: 0.25rem;
+    margin-top: 0.5rem;
+}
+
+.axis-container-spacer {
+    display: flex;
+    
+}
+
+.axis-container-spacer > div {
+    display: inline-block;
+    text-align: center;
+}
+
+.axis-container-explanation-left {
+    width: 37%;
+}
+
+.axis-container-explanation-right {
+    width: 37%;
+}
+
+.axis-container-explanation-middle {
+    width: 21%;
+}
+
+.axis-container-axisname {
+    margin-top: 3rem;
+}
+
+.axis-container-arrow {
+    width: 50%;
+    height: auto;
+}
+
+.axis-container-value {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.axis-container-text {
+
+}
