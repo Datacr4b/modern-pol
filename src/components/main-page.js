@@ -7,7 +7,6 @@ function MainPage() {
 
     return (
         <>
-            <title>ModernPol Test</title>
             <div className="main-container">
                 <div>ECONOMIC</div>&nbsp;
                 <div>LEGAL</div>&nbsp;

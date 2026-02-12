@@ -19,11 +19,11 @@ function Question() {
             return questionItems.reduce(
                 (acc, q) => {
                     acc.econ += Math.abs(q.effect.econ);
-                    acc.dipl += Math.abs(q.effect.dipl);
-                    acc.govt += Math.abs(q.effect.govt);
-                    acc.scty += Math.abs(q.effect.scty);
+                    acc.legal += Math.abs(q.effect.legal);
+                    acc.global += Math.abs(q.effect.global);
+                    acc.social += Math.abs(q.effect.social);
                     return acc;
-                },{ econ: 0, dipl: 0, govt: 0, scty: 0 }
+                },{ econ: 0, legal: 0, global: 0, social: 0 }
             );
         },[]
     );
@@ -32,9 +32,9 @@ function Question() {
         const q = questionItems[questionNumber].effect;
 
         const deltaEcon = q.econ * multiplier;
-        const deltaLegal = q.dipl * multiplier;
-        const deltaGlobal = q.govt * multiplier;
-        const deltaSocial = q.scty * multiplier;
+        const deltaLegal = q.legal * multiplier;
+        const deltaGlobal = q.global * multiplier;
+        const deltaSocial = q.social * multiplier;
 
         if (questionNumber === numOfQuestions - 1) {
             const econ_result = econArray.reduce((a, b) => a + b, 0);
@@ -44,9 +44,9 @@ function Question() {
 
 
             let final_econ = calculateScores(econ_result + deltaEcon, maxScores.econ);
-            let final_legal = calculateScores(legal_result + deltaLegal, maxScores.dipl);
-            let final_global = calculateScores(global_result + deltaGlobal, maxScores.govt);
-            let final_social = calculateScores(social_result + deltaSocial, maxScores.scty);
+            let final_legal = calculateScores(legal_result + deltaLegal, maxScores.legal);
+            let final_global = calculateScores(global_result + deltaGlobal, maxScores.global);
+            let final_social = calculateScores(social_result + deltaSocial, maxScores.social);
 
             navigate(`/results?e=${final_econ}&l=${final_legal}&g=${final_global}&s=${final_social}`);
 

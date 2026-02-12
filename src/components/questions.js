@@ -1,632 +1,857 @@
 const questionItems = [
     {
-        "question": "Oppression by corporations is more of a concern than oppression by governments.",
+        "question": "I worry more about Corporate Influence than State Influence",
         "effect": {
             "econ": 10,
-            "dipl": 0,
-            "govt": -5,
-            "scty": 0
+            "legal": -5,
+            "global": 0,
+            "social": 0
         }
     },
     {
-        "question": "It is necessary for the government to intervene in the economy to protect consumers.",
+        "question": "The means of production should be controlled by the state",
         "effect": {
             "econ": 10,
-            "dipl": 0,
-            "govt": 0,
-            "scty": 0
+            "legal": -2,
+            "global": 0,
+            "social": 0
         }
     },
     {
-        "question": "The freer the markets, the freer the people.",
-        "effect": {
-            "econ": -10,
-            "dipl": 0,
-            "govt": 0,
-            "scty": 0
-        }
-    },
-    {
-        "question": "It is better to maintain a balanced budget than to ensure welfare for all citizens.",
-        "effect": {
-            "econ": -10,
-            "dipl": 0,
-            "govt": 0,
-            "scty": 0
-        }
-    },
-    {
-        "question": "Publicly-funded research is more beneficial to the people than leaving it to the market.",
-        "effect": {
-            "econ": 10,
-            "dipl": 0,
-            "govt": 0,
-            "scty": 10
-        }
-    },
-    {
-        "question": "Tariffs on international trade are important to encourage local production.",
+        "question": "Some products ought to be banned",
         "effect": {
             "econ": 5,
-            "dipl": 0,
-            "govt": -10,
-            "scty": 0
+            "legal": 0,
+            "global": 0,
+            "social": 0
         }
     },
     {
-        "question": "From each according to his ability, to each according to his needs.",
+        "question": "We should tax the rich more",
         "effect": {
             "econ": 10,
-            "dipl": 0,
-            "govt": 0,
-            "scty": 0
+            "legal": 0,
+            "global": 0,
+            "social": 0
         }
     },
     {
-        "question": "It would be best if social programs were abolished in favor of private charity.",
+        "question": "Taxes overall should be lower for everybody",
         "effect": {
             "econ": -10,
-            "dipl": 0,
-            "govt": 0,
-            "scty": 0
+            "legal": 0,
+            "global": 0,
+            "social": 0
         }
     },
     {
-        "question": "Taxes should be increased on the rich to provide for the poor.",
+        "question": "I support state projects such as roads",
         "effect": {
-            "econ": 10,
-            "dipl": 0,
-            "govt": 0,
-            "scty": 0
+            "econ": 5,
+            "legal": 0,
+            "global": 0,
+            "social": 0
         }
     },
     {
-        "question": "Inheritance is a legitimate form of wealth.",
+        "question": "I support tariffs",
+        "effect": {
+            "econ": 5,
+            "legal": 0,
+            "global": -5,
+            "social": 0
+        }
+    },
+    {
+        "question": "We should tax harmful substances like cigarettes",
+        "effect": {
+            "econ": 3,
+            "legal": 0,
+            "global": 0,
+            "social": 0
+        }
+    },
+    {
+        "question": "The government should intervene in the economy",
+        "effect": {
+            "econ": 7,
+            "legal": 0,
+            "global": 0,
+            "social": 0
+        }
+    },
+    {
+        "question": "I support government social programs such as welfare, subsidies, health insurance",
+        "effect": {
+            "econ": 5,
+            "legal": 0,
+            "global": 0,
+            "social": 0
+        }
+    },
+    {
+        "question": "Nobody is owed someone's service or goods",
         "effect": {
             "econ": -10,
-            "dipl": 0,
-            "govt": 0,
-            "scty": -5
+            "legal": 5,
+            "global": 0,
+            "social": 0
         }
     },
     {
-        "question": "Basic utilities like roads and electricity should be publicly owned.",
+        "question": "Healthcare is a human right",
+        "effect": {
+            "econ": 5,
+            "legal": -2,
+            "global": 0,
+            "social": -5
+        }
+    },
+    {
+        "question": "The root cause of most bad things is rich elites",
         "effect": {
             "econ": 10,
-            "dipl": 0,
-            "govt": 0,
-            "scty": 0
+            "legal": 0,
+            "global": 0,
+            "social": 0
         }
     },
     {
-        "question": "Government intervention is a threat to the economy.",
+        "question": "We're being fooled to fight one another by the powerful and rich",
+        "effect": {
+            "econ": 10,
+            "legal": 0,
+            "global": 0,
+            "social": 0
+        }
+    },
+    {
+        "question": "State corruption is worse than corporate corruption",
         "effect": {
             "econ": -10,
-            "dipl": 0,
-            "govt": 0,
-            "scty": 0
+            "legal": 0,
+            "global": 0,
+            "social": 0
         }
     },
     {
-        "question": "Those with a greater ability to pay should receive better healthcare.",
+        "question": "I support the equality of outcome",
         "effect": {
-            "econ": -10,
-            "dipl": 0,
-            "govt": 0,
-            "scty": 0
+            "econ": 15,
+            "legal": 0,
+            "global": 0,
+            "social": 0
         }
     },
     {
-        "question": "Quality education is a right of all people.",
+        "question": "People should have the freedom to consentually trade the goods and services they want",
         "effect": {
-            "econ": 10,
-            "dipl": 0,
-            "govt": 0,
-            "scty": 5
+            "econ": -15,
+            "legal": 0,
+            "global": 0,
+            "social": 0
         }
     },
     {
-        "question": "The means of production should belong to the workers who use them.",
-        "effect": {
-            "econ": 10,
-            "dipl": 0,
-            "govt": 0,
-            "scty": 0
-        }
-    },
-    {
-        "question": "The United Nations should be abolished.",
+        "question": "I support the Police",
         "effect": {
             "econ": 0,
-            "dipl": -10,
-            "govt": -5,
-            "scty": 0
+            "legal": -10,
+            "global": 0,
+            "social": 0
         }
     },
     {
-        "question": "Military action by our nation is often necessary to protect it.",
+        "question": "There's too many laws on the books",
         "effect": {
             "econ": 0,
-            "dipl": -10,
-            "govt": -10,
-            "scty": 0
+            "legal": 10,
+            "global": 0,
+            "social": 0
         }
     },
     {
-        "question": "I support regional unions, such as the European Union.",
+        "question": "Law enforcement should have more state funding",
+        "effect": {
+            "econ": 5,
+            "legal": -10,
+            "global": 0,
+            "social": 0
+        }
+    },
+    {
+        "question": "Marijuana should be legal",
+        "effect": {
+            "econ": -2,
+            "legal": 5,
+            "global": 0,
+            "social": -2
+        }
+    },
+    {
+        "question": "I support the right to own firearms",
+        "effect": {
+            "econ": -2,
+            "legal": 10,
+            "global": 0,
+            "social": 2
+        }
+    },
+    {
+        "question": "I support freedom of speech",
+        "effect": {
+            "econ": 0,
+            "legal": 10,
+            "global": 0,
+            "social": 0
+        }
+    },
+    {
+        "question": "I think we should have hate speech regulations",
+        "effect": {
+            "econ": 0,
+            "legal": -10,
+            "global": 0,
+            "social": -5
+        }
+    },
+    {
+        "question": "Certain political ideologies ought to be banned",
+        "effect": {
+            "econ": 0,
+            "legal": -10,
+            "global": 0,
+            "social": 0
+        }
+    },
+    {
+        "question": "I support the introduction of a digital ID",
+        "effect": {
+            "econ": 0,
+            "legal": -10,
+            "global": 5,
+            "social": 0
+        }
+    },
+    {
+        "question": "Social media should be banned for the underage",
+        "effect": {
+            "econ": 2,
+            "legal": -10,
+            "global": 5,
+            "social": 0
+        }
+    },
+    {
+        "question": "Pornography should be banned",
+        "effect": {
+            "econ": 2,
+            "legal": -5,
+            "global": 0,
+            "social": 10
+        }
+    },
+    {
+        "question": "I support the deportation of illegal immigrants",
+        "effect": {
+            "econ": 2,
+            "legal": -15,
+            "global": -5,
+            "social": 2
+        }
+    },
+    {
+        "question": "Nobody's illegal on stolen land",
+        "effect": {
+            "econ": -2,
+            "legal": 10,
+            "global": -2,
+            "social": -10
+        }
+    },
+    {
+        "question": "I think Immigration enforcement should be more aggressive",
+        "effect": {
+            "econ": 0,
+            "legal": -10,
+            "global": 0,
+            "social": 10
+        }
+    },
+    {
+        "question": "I support the freedom to protest for any cause",
+        "effect": {
+            "econ": 0,
+            "legal": 15,
+            "global": 0,
+            "social": 0
+        }
+    },
+    {
+        "question": "I support tougher sentences for criminals",
+        "effect": {
+            "econ": 0,
+            "legal": -5,
+            "global": 0,
+            "social": 0
+        }
+    },
+    {
+        "question": "I support cash bail",
+        "effect": {
+            "econ": 0,
+            "legal": -5,
+            "global": 0,
+            "social": 0
+        }
+    },
+    {
+        "question": "I support the death penalty",
+        "effect": {
+            "econ": 0,
+            "legal": -10,
+            "global": 0,
+            "social": 0
+        }
+    },
+    {
+        "question": "Private courts would function better than Public courts",
+        "effect": {
+            "econ": 0,
+            "legal": 5,
+            "global": 0,
+            "social": 0
+        }
+    },
+    {
+        "question": "I want my atheist/religious values to be enforced upon the rest of the country",
+        "effect": {
+            "econ": 0,
+            "legal": -10,
+            "global": 0,
+            "social": 0
+        }
+    },
+    {
+        "question": "Humanity should be interconnected",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 5,
+            "social": 0
+        }
+    },
+    {
+        "question": "I support a World Government",
+        "effect": {
+            "econ": 0,
+            "legal": -2,
+            "global": 15,
+            "social": 0
+        }
+    },
+    {
+        "question": "I support political unions such as the European Union",
+        "effect": {
+            "econ": -2,
+            "legal": 0,
+            "global": 10,
+            "social": 0
+        }
+    },
+    {
+        "question": "I support federalisation",
+        "effect": {
+            "econ": 0,
+            "legal": -2,
+            "global": 10,
+            "social": 0
+        }
+    },
+    {
+        "question": "Borders should be abolished",
+        "effect": {
+            "econ": -2,
+            "legal": 2,
+            "global": 15,
+            "social": -5
+        }
+    },
+    {
+        "question": "I support cultural diversity",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 10,
+            "social": -10
+        }
+    },
+    {
+        "question": "Globalism should be enforced on other countries",
+        "effect": {
+            "econ": 0,
+            "legal": -5,
+            "global": 15,
+            "social": 0
+        }
+    },
+    {
+        "question": "I support world-wide organizations such as the UN or the WHO",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 10,
+            "social": 0
+        }
+    },
+    {
+        "question": "I am anti-war of any kind",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 5,
+            "social": 0
+        }
+    },
+    {
+        "question": "It's our responsibility to remove terrorists worldwide",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 10,
+            "social": 5
+        }
+    },
+    {
+        "question": "It's our responsibility to help refugees",
+        "effect": {
+            "econ": 2,
+            "legal": 0,
+            "global": 10,
+            "social": -5
+        }
+    },
+    {
+        "question": "I support regime change if it benefits the world as a whole",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 5,
+            "social": 0
+        }
+    },
+    {
+        "question": "I support regime change if it benefits my country",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": -5,
+            "social": 0
+        }
+    },
+    {
+        "question": "We should demilitarize",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 15,
+            "social": 0
+        }
+    },
+    {
+        "question": "Countries have a right to defend themselves",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 2,
+            "social": 0
+        }
+    },
+    {
+        "question": "I support Ukraine",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 5,
+            "social": 0
+        }
+    },
+    {
+        "question": "I support Israel",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 5,
+            "social": 0
+        }
+    },
+    {
+        "question": "I am against foreign influence in my country's politics",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": -10,
+            "social": 0
+        }
+    },
+    {
+        "question": "We should have an internet firewall like China",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": -15,
+            "social": 0
+        }
+    },
+    {
+        "question": "Abortion should be legal till birth for any reason",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 0,
+            "social": -5
+        }
+    },
+    {
+        "question": "There should be a compromise on abortion",
+        "effect": {
+            "econ": -2,
+            "legal": 0,
+            "global": 0,
+            "social": 0
+        }
+    },
+    {
+        "question": "Abortion should be criminalized",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 0,
+            "social": 5
+        }
+    },
+    {
+        "question": "Mothers that do abortions should be prosecuted the same as any other murder case",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 0,
+            "social": 10
+        }
+    },
+    {
+        "question": "Gay marriage should be legal",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 0,
+            "social": -5
+        }
+    },
+    {
+        "question": "Marriage shouldn't be a state institution at all",
         "effect": {
             "econ": -5,
-            "dipl": 10,
-            "govt": 10,
-            "scty": 5
+            "legal": 5,
+            "global": 0,
+            "social": 0
         }
     },
     {
-        "question": "It is important to maintain our national sovereignty.",
+        "question": "Transgender surgeries should be illegal",
         "effect": {
-            "econ": 0,
-            "dipl": -10,
-            "govt": -5,
-            "scty": 0
+            "econ": 2,
+            "legal": -5,
+            "global": 0,
+            "social": 5
         }
     },
     {
-        "question": "A united world government would be beneficial to mankind.",
-        "effect": {
-            "econ": 0,
-            "dipl": 10,
-            "govt": 0,
-            "scty": 0
-        }
-    },
-    {
-        "question": "It is more important to retain peaceful relations than to further our strength.",
-        "effect": {
-            "econ": 0,
-            "dipl": 10,
-            "govt": 0,
-            "scty": 0
-        }
-    },
-    {
-        "question": "Wars do not need to be justified to other countries.",
-        "effect": {
-            "econ": 0,
-            "dipl": -10,
-            "govt": -10,
-            "scty": 0
-        }
-    },
-    {
-        "question": "Military spending is a waste of money.",
-        "effect": {
-            "econ": 0,
-            "dipl": 10,
-            "govt": 10,
-            "scty": 0
-        }
-    },
-    {
-        "question": "International aid is a waste of money.",
-        "effect": {
-            "econ": -5,
-            "dipl": -10,
-            "govt": 0,
-            "scty": 0
-        }
-    },
-    {
-        "question": "My nation is great.",
-        "effect": {
-            "econ": 0,
-            "dipl": -10,
-            "govt": 0,
-            "scty": 0
-        }
-    },
-    {
-        "question": "Research should be conducted on an international scale.",
-        "effect": {
-            "econ": 0,
-            "dipl": 10,
-            "govt": 0,
-            "scty": 10
-        }
-    },
-    {
-        "question": "Governments should be accountable to the international community.",
-        "effect": {
-            "econ": 0,
-            "dipl": 10,
-            "govt": 5,
-            "scty": 0
-        }
-    },
-    {
-        "question": "Even when protesting an authoritarian government, violence is not acceptable.",
-        "effect": {
-            "econ": 0,
-            "dipl": 5,
-            "govt": -5,
-            "scty": 0
-        }
-    },
-    {
-        "question": "My religious values should be spread as much as possible.",
-        "effect": {
-            "econ": 0,
-            "dipl": -5,
-            "govt": -10,
-            "scty": -10
-        }
-    },
-    {
-        "question": "Our nation's values should be spread as much as possible.",
-        "effect": {
-            "econ": 0,
-            "dipl": -10,
-            "govt": -5,
-            "scty": 0
-        }
-    },
-    {
-        "question": "It is very important to maintain law and order.",
-        "effect": {
-            "econ": 0,
-            "dipl": -5,
-            "govt": -10,
-            "scty": -5
-        }
-    },
-    {
-        "question": "The general populace makes poor decisions.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": -10,
-            "scty": 0
-        }
-    },
-    {
-        "question": "Physician-assisted suicide should be legal.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": 10,
-            "scty": 0
-        }
-    },
-    {
-        "question": "The sacrifice of some civil liberties is necessary to protect us from acts of terrorism.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": -10,
-            "scty": 0
-        }
-    },
-    {
-        "question": "Government surveillance is necessary in the modern world.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": -10,
-            "scty": 0
-        }
-    },
-    {
-        "question": "The very existence of the state is a threat to our liberty.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": 10,
-            "scty": 0
-        }
-    },
-    {
-        "question": "Regardless of political opinions, it is important to side with your country.",
-        "effect": {
-            "econ": 0,
-            "dipl": -10,
-            "govt": -10,
-            "scty": -5
-        }
-    },
-    {
-        "question": "All authority should be questioned.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": 10,
-            "scty": 5
-        }
-    },
-    {
-        "question": "A hierarchical state is best.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": -10,
-            "scty": 0
-        }
-    },
-    {
-        "question": "It is important that the government follows the majority opinion, even if it is wrong.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": 10,
-            "scty": 0
-        }
-    },
-    {
-        "question": "The stronger the leadership, the better.",
-        "effect": {
-            "econ": 0,
-            "dipl": -10,
-            "govt": -10,
-            "scty": 0
-        }
-    },
-    {
-        "question": "Democracy is more than a decision-making process.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": 10,
-            "scty": 0
-        }
-    },
-    {
-        "question": "Environmental regulations are essential.",
-        "effect": {
-            "econ": 5,
-            "dipl": 0,
-            "govt": 0,
-            "scty": 10
-        }
-    },
-    {
-        "question": "A better world will come from automation, science, and technology.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": 0,
-            "scty": 10
-        }
-    },
-    {
-        "question": "Children should be educated in religious or traditional values.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": -5,
-            "scty": -10
-        }
-    },
-    {
-        "question": "Traditions are of no value on their own.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": 0,
-            "scty": 10
-        }
-    },
-    {
-        "question": "Religion should play a role in government.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": -10,
-            "scty": -10
-        }
-    },
-    {
-        "question": "Churches should be taxed the same way other institutions are taxed.",
-        "effect": {
-            "econ": 5,
-            "dipl": 0,
-            "govt": 0,
-            "scty": 10
-        }
-    },
-    {
-        "question": "Climate change is currently one of the greatest threats to our way of life.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": 0,
-            "scty": 10
-        }
-    },
-    {
-        "question": "It is important that we work as a united world to combat climate change.",
-        "effect": {
-            "econ": 0,
-            "dipl": 10,
-            "govt": 0,
-            "scty": 10
-        }
-    },
-    {
-        "question": "Society was better many years ago than it is now.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": 0,
-            "scty": -10
-        }
-    },
-    {
-        "question": "It is important that we maintain the traditions of our past.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": 0,
-            "scty": -10
-        }
-    },
-    {
-        "question": "It is important that we think in the long term, beyond our lifespans.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": 0,
-            "scty": 10
-        }
-    },
-    {
-        "question": "Reason is more important than maintaining our culture.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": 0,
-            "scty": 10
-        }
-    },
-    {
-        "question": "Drug use should be legalized or decriminalized.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": 10,
-            "scty": 2
-        }
-    },
-    {
-        "question": "Same-sex marriage should be legal.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": 10,
-            "scty": 10
-        }
-    },
-    {
-        "question": "No cultures are superior to others.",
-        "effect": {
-            "econ": 0,
-            "dipl": 10,
-            "govt": 5,
-            "scty": 10
-        }
-    },
-    {
-        "question": "Sex outside marriage is immoral.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": -5,
-            "scty": -10
-        }
-    },
-    {
-        "question": "If we accept migrants at all, it is important that they assimilate into our culture.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": -5,
-            "scty": -10
-        }
-    },
-    {
-        "question": "Abortion should be prohibited in most or all cases.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": -10,
-            "scty": -10
-        }
-    },
-    {
-        "question": "Gun ownership should be prohibited for those without a valid reason.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": -10,
-            "scty": 0
-        }
-    },
-    {
-        "question": "I support single-payer, universal healthcare.",
-        "effect": {
-            "econ": 10,
-            "dipl": 0,
-            "govt": 0,
-            "scty": 0
-        }
-    },
-    {
-        "question": "Prostitution should be illegal.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": -10,
-            "scty": -10
-        }
-    },
-    {
-        "question": "Maintaining family values is essential.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": 0,
-            "scty": -10
-        }
-    },
-    {
-        "question": "To chase progress at all costs is dangerous.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": 0,
-            "scty": -10
-        }
-    },
-    {
-        "question": "Genetic modification is a force for good, even on humans.",
-        "effect": {
-            "econ": 0,
-            "dipl": 0,
-            "govt": 0,
-            "scty": 10
-        }
-    },
-    {
-        "question": "We should open our borders to immigration.",
-        "effect": {
-            "econ": 0,
-            "dipl": 10,
-            "govt": 10,
-            "scty": 0
-        }
-    },
-    {
-        "question": "Governments should be as concerned about foreigners as they are about their own citizens.",
-        "effect": {
-            "econ": 0,
-            "dipl": 10,
-            "govt": 0,
-            "scty": 0
-        }
-    },
-    {
-        "question": "All people - regardless of factors like culture or sexuality - should be treated equally.",
-        "effect": {
-            "econ": 10,
-            "dipl": 10,
-            "govt": 10,
-            "scty": 10
-        }
-    },
-    {
-        "question": "It is important that we further my group's goals above all others.",
+        "question": "Transgender treatments shouldn't be covered by insurance",
         "effect": {
             "econ": -10,
-            "dipl": -10,
-            "govt": -10,
-            "scty": -10
+            "legal": 2,
+            "global": 0,
+            "social": -2
+        }
+    },
+    {
+        "question": "Gender-affirming treatments should be illegal",
+        "effect": {
+            "econ": 0,
+            "legal": -2,
+            "global": 0,
+            "social": 5
+        }
+    },
+    {
+        "question": "Gender-affirming treatments should be illegal for underage people",
+        "effect": {
+            "econ": 0,
+            "legal": -2,
+            "global": 0,
+            "social": 5
+        }
+    },
+    {
+        "question": "Transwomen are women",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 0,
+            "social": -10
+        }
+    },
+    {
+        "question": "Non-binary gender is a real thing",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 0,
+            "social": -10
+        }
+    },
+    {
+        "question": "Neogenders are a real thing",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 0,
+            "social": -10
+        }
+    },
+    {
+        "question": "Sex isn't equal to Gender",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 0,
+            "social": -5
+        }
+    },
+    {
+        "question": "Therian and otherkin should be recognized by the law",
+        "effect": {
+            "econ": 0,
+            "legal": -2,
+            "global": 0,
+            "social": -15
+        }
+    },
+    {
+        "question": "Poly relationships can be as successful as monogamous relationships",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 0,
+            "social": -5
+        }
+    },
+    {
+        "question": "Poly marriages should be recognized by the law",
+        "effect": {
+            "econ": 0,
+            "legal": -2,
+            "global": 0,
+            "social": -10
+        }
+    },
+    {
+        "question": "I'm an atheist",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 0,
+            "social": -2
+        }
+    },
+    {
+        "question": "I'm religious",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 0,
+            "social": 2
+        }
+    },
+    {
+        "question": "Humans are made in the image of God",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 0,
+            "social": 5
+        }
+    },
+    {
+        "question": "Traditions should be cherished",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 0,
+            "social": 5
+        }
+    },
+    {
+        "question": "Human fetuses are neither human nor people",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 0,
+            "social": -5
+        }
+    },
+    {
+        "question": "Black people deserve reparations for slavery",
+        "effect": {
+            "econ": 5,
+            "legal": -5,
+            "global": 0,
+            "social": -10
+        }
+    },
+    {
+        "question": "Polish people deserve reparations for World War 2",
+        "effect": {
+            "econ": 0,
+            "legal": -2,
+            "global": 0,
+            "social": -5
+        }
+    },
+    {
+        "question": "Group identity is important",
+        "effect": {
+            "econ": 5,
+            "legal": 0,
+            "global": 0,
+            "social": -5
+        }
+    },
+    {
+        "question": "I believe in a meritocracy",
+        "effect": {
+            "econ": -5,
+            "legal": 0,
+            "global": 0,
+            "social": 5
+        }
+    },
+    {
+        "question": "White people have privilege",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 0,
+            "social": -10
+        }
+    },
+    {
+        "question": "Women shouldn't have the right to vote",
+        "effect": {
+            "econ": 0,
+            "legal": -5,
+            "global": 0,
+            "social": 15
+        }
+    },
+    {
+        "question": "My race is better",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 0,
+            "social": 15
+        }
+    },
+    {
+        "question": "All cultures are made equal",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 5,
+            "social": -15
+        }
+    },
+    {
+        "question": "Kinks have a place in Pride",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 0,
+            "social": -5
+        }
+    },
+    {
+        "question": "Sex education should be available in primary and middle schools",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 0,
+            "social": -5
+        }
+    },
+    {
+        "question": "The environment needs to be protected",
+        "effect": {
+            "econ": 10,
+            "legal": 0,
+            "global": 0,
+            "social": -10
+        }
+    },
+    {
+        "question": "Conservatives are nazis",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 0,
+            "social": -5
+        }
+    },
+    {
+        "question": "Liberals are communists",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 0,
+            "social": 5
+        }
+    },
+    {
+        "question": "Transwomen should be allowed to participate in women's sports",
+        "effect": {
+            "econ": 0,
+            "legal": 0,
+            "global": 0,
+            "social": -5
+        }
+    },
+    {
+        "question": "I am against law enforcement in general",
+        "effect": {
+            "econ": 0,
+            "legal": 10,
+            "global": 0,
+            "social": -10
+        }
+    },
+    {
+        "question": "I think authority should be centralized in fewer people",
+        "effect": {
+            "econ": 5,
+            "legal": -10,
+            "global": 0,
+            "social": 0
+        }
+    },
+    {
+        "question": "I support the development of AI technologies",
+        "effect": {
+            "econ": -5,
+            "legal": 5,
+            "global": 0,
+            "social": 0
         }
     }
 ];
