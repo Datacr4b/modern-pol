@@ -270,7 +270,7 @@ const questionItems = [
         }
     },
     {
-        "question": "I think Immigration enforcement should be more aggressive",
+        "question": "I think immigration enforcement should be more aggressive",
         "effect": {
             "econ": 0,
             "legal": -10,
@@ -576,7 +576,7 @@ const questionItems = [
         }
     },
     {
-        "question": "Gender-affirming treatments should be illegal",
+        "question": "Transgender-affirming treatments should be illegal",
         "effect": {
             "econ": 0,
             "legal": -2,
@@ -585,7 +585,7 @@ const questionItems = [
         }
     },
     {
-        "question": "Gender-affirming treatments should be illegal for underage people",
+        "question": "Transgender-affirming treatments should be illegal for underage people",
         "effect": {
             "econ": 0,
             "legal": -2,
@@ -711,7 +711,7 @@ const questionItems = [
         }
     },
     {
-        "question": "Polish people deserve reparations for World War 2",
+        "question": "Polish people deserve reparations for world war two",
         "effect": {
             "econ": 0,
             "legal": -2,
