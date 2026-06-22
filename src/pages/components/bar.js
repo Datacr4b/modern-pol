@@ -1,4 +1,4 @@
-import "./css/bar.css";
+import "../css/bar.css";
 import React from "react";
 
 function Bar(props) {
@@ -6,7 +6,7 @@ function Bar(props) {
 
     return (
         <>
-            <div className={`bar ${name}`} style={{width: `${width}%`}}>
+            <div className={`bar ${name}`} style={{ width: `${width}%` }}>
                 <div className="text-wrapper">{width}%</div>
             </div>
         </>

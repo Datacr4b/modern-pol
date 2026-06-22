@@ -1,10 +1,10 @@
 import { createRoot } from "react-dom/client";
-import App from "./components/app";
-import AppQuestion from "./components/app_question";
+import App from "./pages/app";
+import AppQuestion from "./pages/app_question";
 import "./main.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AppResults from "./components/app_results";
-import AppWeight from "./components/app_weight";
+import AppResults from "./pages/app_results";
+import AppWeight from "./pages/app_weight";
 
 const domNode = document.querySelector("#root");
 const root = createRoot(domNode);

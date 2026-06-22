@@ -1,11 +1,11 @@
 import React from "react";
-import Question from "./pages/question";
-import HeaderPage from "./pages/header-page";
+import Question from "./components/question";
+import Header from "./components/header";
 
 function AppQuestion() {
     return (
         <>
-            <HeaderPage />
+            <Header />
             <Question />
         </>
     );

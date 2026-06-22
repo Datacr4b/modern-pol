@@ -2,6 +2,8 @@ import React, { useState, useMemo } from "react";
 import "../css/question.css";
 import questionItems from "../objects/questions";
 import { useNavigate, useLocation } from "react-router";
+import { Helmet } from "react-helmet";
+import { AnimatePresence, motion } from "framer-motion";
 
 function Question() {
     const numOfQuestions = questionItems.length;
@@ -21,7 +23,7 @@ function Question() {
     let navigate = useNavigate();
 
     const maxScores = useMemo(
-        () => { 
+        () => {
             return questionItems.reduce(
                 (acc, q) => {
                     acc.econ += Math.abs(q.effect.econ * economyWeight);
@@ -29,9 +31,9 @@ function Question() {
                     acc.global += Math.abs(q.effect.global * globalWeight);
                     acc.social += Math.abs(q.effect.social * socialWeight);
                     return acc;
-                },{ econ: 0, legal: 0, global: 0, social: 0 }
+                }, { econ: 0, legal: 0, global: 0, social: 0 }
             );
-        },[economyWeight, legalWeight, globalWeight, socialWeight]
+        }, [economyWeight, legalWeight, globalWeight, socialWeight]
     );
 
     const onAnswer = (multiplier) => {
@@ -55,6 +57,7 @@ function Question() {
             let final_global = calculateScores(global_result + deltaGlobal, maxScores.global);
             let final_social = calculateScores(social_result + deltaSocial, maxScores.social);
 
+            /* TODO, switch to NavLink and props ?? */
             navigate(`/results?e=${final_econ}&l=${final_legal}&g=${final_global}&s=${final_social}&a=${answerArray},${multiplier}`);
 
             return;
@@ -65,28 +68,40 @@ function Question() {
         setGlobalArray(prev => ([...prev, deltaGlobal]));
         setSocialArray(prev => ([...prev, deltaSocial]));
 
-        if(Math.abs(q.econ) > 2) { weightMult *= economyWeight }
-        if(Math.abs(q.legal) > 2) { weightMult *= legalWeight }
-        if(Math.abs(q.global) > 2) { weightMult *= globalWeight }
-        if(Math.abs(q.social) > 2) { weightMult *= socialWeight }
-        
+        if (Math.abs(q.econ) > 2) { weightMult *= economyWeight }
+        if (Math.abs(q.legal) > 2) { weightMult *= legalWeight }
+        if (Math.abs(q.global) > 2) { weightMult *= globalWeight }
+        if (Math.abs(q.social) > 2) { weightMult *= socialWeight }
+
         setAnswerArray(prev => ([...prev, weightMult]));
 
         setQuestionNumber(prev => (prev + 1));
     };
 
     const calculateScores = (score, max) => {
-        return (100*(max+score)/(2*max)).toFixed(1);
+        return (100 * (max + score) / (2 * max)).toFixed(1);
     };
 
     return (
         <>
+            <Helmet>
+                <title>{`Poland Values - Question ${questionNumber + 1}`}</title>
+            </Helmet>
             <div className="question-number">
                 <h2>Question {questionNumber + 1} of {numOfQuestions}</h2>
             </div>
-            <div className="question-container">
-                <p>{questionItems[questionNumber].question}</p>
-            </div>
+            <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                    key={questionNumber}
+                    initial={{ opacity: 0, x: 100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -100 }}
+                >
+                    <div className="question-container">
+                        <p>{questionItems[questionNumber].question}</p>
+                    </div>
+                </motion.div>
+            </AnimatePresence>
             <div className="answers-container">
                 <button className="strongly-agree" onClick={() => onAnswer(1.0)}>Strongly Agree</button>
                 <button className="agree" onClick={() => onAnswer(0.5)}>Agree</button>

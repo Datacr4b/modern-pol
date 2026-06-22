@@ -1,10 +1,10 @@
-import Weight from "./pages/weight";
-import HeaderPage from "./pages/header-page";
+import Weight from "./components/weight";
+import Header from "./components/header";
 
 function AppWeight() {
     return (
         <>
-            <HeaderPage />
+            <Header />
             <Weight />
         </>
     );
